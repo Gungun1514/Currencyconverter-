@@ -1,13 +1,16 @@
 # Currencyconverter-
 from currency_converter import CurrencyConverter
 import tkinter as tk
+# Initialize the CurrencyConverter object
 c = CurrencyConverter()
 #print(c.convert(12,"USD","INR"))
 
+# Initialize the Tkinter window
 window = tk.Tk()
 window.geometry("500x360")
 window.title("Currency Converter")
 
+# Function to handle the conversion logic when the button is clicked
 def clicked():
     amount = int(entry1.get())
     cur1 = entry2.get()
@@ -15,7 +18,8 @@ def clicked():
     data = c.convert(amount, cur1, cur2)
     label4 = tk.Label(window, text=data,font = "Times 16 bold").place(x = 200, y = 300)
 
-
+# UI Components - Labels and Entry Fields
+# Title label for the application
 label = tk.Label(window, text="Currency Converter",font = "Times 20 bold").place(x = 120 , y = 40)
 
 label1 = tk.Label(window,text = "Enter amount here:",font = "Times 16 bold").place(x = 70 , y = 100)
@@ -27,9 +31,12 @@ entry2 = tk.Entry(window)
 label3 = tk.Label(window,text = "Enter  desired currency :",font = "Times 16 bold").place(x = 15 , y = 200)
 entry3 = tk.Entry(window)
 
+# Button to trigger the conversion
 button = tk.Button(window, text = "Convert",font = "Times 16 bold",command=clicked).place(x = 220 , y = 250)
 entry1.place(x = 270 , y = 105)
 entry2.place(x = 270 , y = 155)
 entry3.place(x = 270 , y = 205)
+
+# Start the Tkinter event loop
 window.mainloop()
-window.mainloop()
+
